@@ -1,0 +1,6 @@
+if SHIELD_ARTSEYIO
+
+config ZMK_KEYBOARD_NAME
+    default "artsey.io"
+
+endif
