@@ -20,9 +20,6 @@
 #define TIMEOUT_LAYER_HOLD 200
 #define TIMEOUT_STICKY_LEADER_KEY 5000
 
-#define ARTSEY_BT_TOP &out OUT_BLE
-#define ARTSEY_BT_BOTTOM &out OUT_USB
-
 &sk {
 	release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
 };
@@ -30,14 +27,7 @@
 	release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
 };
 
-#define ARTSEY_LAYER_CUSTOM                                            \
-		custom {                                                       \
-			label = "Custom";                                          \
-			bindings = <                                               \
-				&none               &kp C_VOL_UP  &kp INS   &kp C_MUTE \
-				&mo LAYER_ID_CUSTOM &kp C_VOL_DN  &kp PSCRN &sk RSHFT  \
-			>;                                                         \
-		};
+		
 
 #define ARTSEY_BASE_A A
 #define ARTSEY_BASE_R R
@@ -207,12 +197,18 @@
 			label = "BT";
 			bindings = <
 
-				ARTSEY_BT_TOP    &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
+				&out OUT_BLE    &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
 
-				ARTSEY_BT_BOTTOM &bt BT_SEL 5 &bt BT_SEL 4 &bt BT_SEL 3
+				&out OUT_USB &bt BT_SEL 5 &bt BT_SEL 4 &bt BT_SEL 3
 
 			>;
 		};
-		ARTSEY_LAYER_CUSTOM
+		custom {                                                       
+			label = "Custom";                                          
+			bindings = <                                               
+				&none               &kp C_VOL_UP  &kp INS   &kp C_MUTE 
+				&mo LAYER_ID_CUSTOM &kp C_VOL_DN  &kp PSCRN &sk RSHFT  
+			>;                                                         
+		};
 	};
 };
