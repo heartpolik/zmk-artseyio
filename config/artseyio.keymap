@@ -402,7 +402,7 @@
             #binding-cells = <2>;
             tapping_term_ms = <TIMEOUT_HOLD_FN>;
             flavor = "tap-preferred";
-            bindings = <&bt BT_SEL 0>, <&bt BT_DISC 0>;
+            bindings = <&bt>, <&bt>;
         };
 
         bt_sel_dconn_1: bt_sel_dconn_1 {
@@ -492,7 +492,7 @@
         bt {
             label = "BT";
             bindings = <
-  &bt_sel_dconn_3 BT_CLR_ALL BT_CLR_ALL  &bt_sel_dconn_2  &bt_sel_dconn_1  &bt_sel_dconn_0
+  &bt_sel_dconn_3 BT_CLR_ALL BT_CLR_ALL  &bt_sel_dconn_2  &bt_sel_dconn_1  &bt_sel_dconn_0  BT_SEL 0  BT_DISC 0
   &out OUT_TOG                           &bt_clr          &soft_off        &none
             >;
         };
