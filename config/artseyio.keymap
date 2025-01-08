@@ -342,6 +342,16 @@
 
 / {
     behaviors {
+
+        layer_hold_kp_tap: layer_hold_kp_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer_hold_kp_tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <TIMEOUT_LAYER_HOLD>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
         layer_base_kp: layer_base_kp {
             compatible = "zmk,behavior-hold-tap";
             label = "layer_base_kp";
@@ -423,8 +433,8 @@
         base {
             label = "ARTSEY";
             bindings = <
-  &layer_numbers_kp LAYER_ID_NUMBERS ARTSEY_BASE_S  &kp ARTSEY_BASE_T  &kp ARTSEY_BASE_R  &layer_parentheticals_kp LAYER_ID_PARENTHETICALS ARTSEY_BASE_A
-  &layer_custom_kp LAYER_ID_CUSTOM ARTSEY_BASE_O    &kp ARTSEY_BASE_I  &kp ARTSEY_BASE_Y  &layer_symbols_kp LAYER_ID_SYMBOLS ARTSEY_BASE_E
+  &layer_hold_kp_tap LAYER_ID_NUMBERS ARTSEY_BASE_S  &kp ARTSEY_BASE_T  &kp ARTSEY_BASE_R  &layer_hold_kp_tap LAYER_ID_PARENTHETICALS ARTSEY_BASE_A
+  &layer_hold_kp_tap LAYER_ID_CUSTOM ARTSEY_BASE_O    &kp ARTSEY_BASE_I  &kp ARTSEY_BASE_Y  &layer_hold_kp_tap LAYER_ID_SYMBOLS ARTSEY_BASE_E
             >;
         };
 
