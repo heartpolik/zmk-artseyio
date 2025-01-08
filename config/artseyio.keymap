@@ -342,7 +342,6 @@
 
 / {
     behaviors {
-
         layer_hold_kp_tap: layer_hold_kp_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "layer_hold_kp_tap";
@@ -434,7 +433,7 @@
             label = "ARTSEY";
             bindings = <
   &layer_hold_kp_tap LAYER_ID_NUMBERS ARTSEY_BASE_S  &kp ARTSEY_BASE_T  &kp ARTSEY_BASE_R  &layer_hold_kp_tap LAYER_ID_PARENTHETICALS ARTSEY_BASE_A
-  &layer_hold_kp_tap LAYER_ID_CUSTOM ARTSEY_BASE_O    &kp ARTSEY_BASE_I  &kp ARTSEY_BASE_Y  &layer_hold_kp_tap LAYER_ID_SYMBOLS ARTSEY_BASE_E
+  &layer_hold_kp_tap LAYER_ID_CUSTOM ARTSEY_BASE_O   &kp ARTSEY_BASE_I  &kp ARTSEY_BASE_Y  &layer_hold_kp_tap LAYER_ID_SYMBOLS ARTSEY_BASE_E
             >;
         };
 
@@ -473,8 +472,8 @@
         bt {
             label = "BT";
             bindings = <
-  &bt_sel_dconn  BT_DISC BT_SEL 3 3  &bt_sel_dconn  BT_DISC BT_SEL 2 2  &bt_sel_dconn  BT_DISC BT_SEL 1 1  &bt_sel_dconn  BT_DISC BT_SEL 0 0
-  &out OUT_TOG                       &bt_clr_curr_all BT_CLR_ALL BT_CLR         &soft_off        &none
+  &bt BT_SEL 3  &bt BT_SEL 2                        &bt BT_SEL 1  &bt BT_SEL 0
+  &out OUT_TOG  &bt_clr_curr_all BT_CLR_ALL BT_CLR  &soft_off     &none
             >;
         };
 
