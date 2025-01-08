@@ -17,10 +17,6 @@
 
 &sl { release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>; };
 
-&soft_off {
-    hold-time-ms = <TIMEOUT_HOLD_FN>; // Only turn off it the key is held for 5 seconds or longer.
-};
-
 #define ARTSEY_BASE_A A
 #define ARTSEY_BASE_R R
 #define ARTSEY_BASE_T T
@@ -337,6 +333,12 @@
             key-positions = <4 5 6 3>;
             bindings = <&kp CAPS>;
         };
+
+        softoff {
+            bindings = <&soft_off>;
+            key-positions = <6 7>;
+            layers = <5>;
+        };
     };
 };
 
@@ -395,15 +397,6 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
-
-        bt_clr_curr_all: bt_clr_curr_all {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BT_CLR_CURR_ALL";
-            #binding-cells = <2>;
-            tapping_term_ms = <TIMEOUT_HOLD_FN>;
-            flavor = "tap-preferred";
-            bindings = <&bt>, <&bt>;
-        };
     };
 };
 
@@ -454,8 +447,8 @@
         bt {
             label = "BT";
             bindings = <
-  &bt BT_SEL 3  &bt BT_SEL 2                        &bt BT_SEL 1  &bt BT_SEL 0
-  &out OUT_TOG  &bt_clr_curr_all BT_CLR_ALL BT_CLR  &soft_off     &none
+  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+  &out OUT_TOG  &bt BT_CLR    &none         &none
             >;
         };
 
