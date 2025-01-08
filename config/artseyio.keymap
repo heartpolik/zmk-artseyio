@@ -396,24 +396,6 @@
             bindings = <&mo>, <&kp>;
         };
 
-        ctrl_alt_kp: ctrl_alt_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ctrl_alt_kp";
-            #binding-cells = <2>;
-            tapping_term_ms = <TIMEOUT_LAYER_HOLD>;
-            flavor = "tap-preferred";
-            bindings = <&sk>, <&sk>;
-        };
-
-        bt_sel_dconn: bt_sel_dconn {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BT_SEL_DCONN";
-            #binding-cells = <2>;
-            tapping_term_ms = <TIMEOUT_HOLD_FN>;
-            flavor = "tap-preferred";
-            bindings = <&bt>, <&bt>;
-        };
-
         bt_clr_curr_all: bt_clr_curr_all {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_CLR_CURR_ALL";
