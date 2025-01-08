@@ -413,7 +413,7 @@
             flavor = "tap-preferred";
             bindings = <&bt BT_SEL 1>, <&bt BT_DISC 1>;
         };
-        
+
         bt_sel_dconn_2: bt_sel_dconn_2 {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_SEL_DCONN_2";
@@ -422,7 +422,7 @@
             flavor = "tap-preferred";
             bindings = <&bt BT_SEL 2>, <&bt BT_DISC 2>;
         };
-        
+
         bt_sel_dconn_3: bt_sel_dconn_3 {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_SEL_DCONN_3";
@@ -432,7 +432,9 @@
             bindings = <&bt BT_SEL 3>, <&bt BT_DISC 3>;
         };
 
-        bt_clr-curr_clr-all: bt_clr-curr_clr-all {
+        bt_clr-curr_clr-all:
+
+        bt_clr_curr_clr_all: bt_clr-curr_clr-all {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_CLR_CURR_ALL";
             #binding-cells = <2>;
@@ -490,8 +492,8 @@
         bt {
             label = "BT";
             bindings = <
-  &bt_sel_dconn_3  &bt_sel_dconn_2        &bt_sel_dconn_1  &bt_sel_dconn_0
-  &out OUT_TOG     &bt_clr-curr_clr-allL  &soft_off        &none
+  &bt_sel_dconn_3 BT_CLR_ALL BT_CLR_ALL  &bt_sel_dconn_2  &bt_sel_dconn_1  &bt_sel_dconn_0
+  &out OUT_TOG                           &bt_clr          &soft_off        &none
             >;
         };
 
