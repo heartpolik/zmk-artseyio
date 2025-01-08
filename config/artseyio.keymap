@@ -492,7 +492,7 @@
         bt {
             label = "BT";
             bindings = <
-  &bt_sel_dconn_3 BT_CLR_ALL BT_CLR_ALL  &bt_sel_dconn_2  &bt_sel_dconn_1  &bt_sel_dconn_0  BT_SEL 0  BT_DISC 0
+  &bt_sel_dconn_3 BT_CLR_ALL BT_CLR_ALL  &bt_sel_dconn_2  &bt_sel_dconn_1  &bt_sel_dconn_0  BT_DISC BT_SEL 0 0
   &out OUT_TOG                           &bt_clr          &soft_off        &none
             >;
         };
